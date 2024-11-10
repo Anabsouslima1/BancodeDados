@@ -3,27 +3,30 @@ CREATE TABLE Industria_Farmaceutica (
     id_industria SERIAL PRIMARY KEY,
     nome_empresa VARCHAR(100) NOT NULL,
     ano_fundacao INT,
-    faturamento_anual NUMERIC(15, 2)
+    faturamento_anual NUMERIC(15, 2),
 );
 
 -- Tabela auxiliar para 'Licenças e Certificados' (normalização)
 CREATE TABLE Licencas_Certificados (
     id_licenca SERIAL PRIMARY KEY,
-    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
-    descricao VARCHAR(300) NOT NULL
+    id_industria INT,
+    descricao VARCHAR(300) NOT NULL,
+    FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
 );
 
 -- Tabela auxiliar para 'Unidade' (normalização)
 CREATE TABLE Unidade (
     id_unidade SERIAL PRIMARY KEY,
-    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
+    id_industria INT,
     cnpj_unidade CHAR(18) UNIQUE,
     endereco VARCHAR(200) NOT NULL,
-    tipo_local VARCHAR(6)  -- 'Sede' ou 'Filial'
+    tipo_local VARCHAR(6),  -- 'Sede' ou 'Filial'
+    FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
 );
 
 -- Entidade: Distribuidora
 CREATE TABLE Distribuidora (
+    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
     id_distribuidora SERIAL PRIMARY KEY,
     nome_empresa VARCHAR(100) NOT NULL,
     contato_telefone VARCHAR(50),
@@ -34,6 +37,7 @@ CREATE TABLE Distribuidora (
 
 -- Entidade: Farmacia/Ponto de Venda
 CREATE TABLE Farmacia_Ponto_Venda (
+    id_distribuidora INT REFERENCES Distribuidora(id_distribuidora) ON DELETE CASCADE,
     id_farmacia SERIAL PRIMARY KEY,
     cnpj_farmacia CHAR(14) UNIQUE, 
     sede VARCHAR(150),          
@@ -43,6 +47,7 @@ CREATE TABLE Farmacia_Ponto_Venda (
 
 -- Entidade: Medicamento Testado
 CREATE TABLE Medicamento_Testado (
+    id_farmacia INT REFERENCES Farmacia_Ponto_Venda(id_farmacia) ON DELETE CASCADE,
     id_produto SERIAL PRIMARY KEY,
     composicao_medicamento VARCHAR(300),
     nome_produto VARCHAR(100) NOT NULL,
@@ -53,6 +58,7 @@ CREATE TABLE Medicamento_Testado (
 
 -- Entidade: Cliente
 CREATE TABLE Cliente (
+    id_produto INT REFERENCES Medicamento_Testado(id_produto) ON DELETE CASCADE, 
     id_cliente SERIAL PRIMARY KEY, 
     cpf_cliente CHAR(11) NOT NULL UNIQUE,
     nome_cliente VARCHAR(100),
@@ -71,10 +77,10 @@ CREATE TABLE Materia_Prima (
 -- Entidade: Fornecedora de Animais
 CREATE TABLE Fornecedora_Animais (
     id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
-    id_fornecedor SERIAL PRIMARY KEY,
-    nome_fornecedor VARCHAR(100) NOT NULL,
-    endereco_fornecedor VARCHAR(200),
-    proprietario_fornecedor VARCHAR(100) NOT NULL
+    id_fornecedora SERIAL PRIMARY KEY,
+    nome_fornecedora VARCHAR(100) NOT NULL,
+    endereco_fornecedora VARCHAR(200),
+    proprietario_fornecedora VARCHAR(100) NOT NULL
 );
 
 -- Tabela auxiliar para 'Animal' da Fornecedora (multivalorado)
