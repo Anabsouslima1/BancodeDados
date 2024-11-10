@@ -1,7 +1,7 @@
 -- Insert Funcionários
 INSERT INTO Funcionarios (nome_funcionario, cpf_funcionario, endereco_funcionario, contato_telefone, contato_email, setor, cargo, turno, salario)
 VALUES 
-('Júlia Bastos', '51616468882', 'Rua João Goulart, 74', '11 94263-7964', 'juliabastos@gmail.com', 'Produção', 'Operadora', 'Matutino', 3000.00),
+('Júlia Bastos', '51616468882', 'Rua João Goulart, 74', '11 94263-7964', 'juliabastos@gmail.com', 'Manutenção', 'Zeladora', 'Matutino', 3000.00),
 ('Ana Beatriz', '67765436150', 'Rua Getúlio Dornelles, 60', '11 985678-7587', 'anabia@gmail.com', 'Pesquisa', 'Pesquisadora', 'Noturno', 5000.00),
 ('Livia Severi', '99678912340', 'Rua Francesco Severi, 80', '11 98937-6671', 'liviaseveri@gmail.com', 'Administração', 'Recepcionista', 'Vespertino', 2000.00),
 ('Ana Clara', '72812345603', 'Rua Juscelino Kubitschek, 94', '11 95366-5345', 'anaclara@gmail.com', 'Segurança', 'Segurança', 'Noturno', 7000.00);
