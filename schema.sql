@@ -9,7 +9,7 @@ CREATE TABLE Industria_Farmaceutica (
 -- Tabela auxiliar para 'Licenças e Certificados' (normalização)
 CREATE TABLE Licencas_Certificados (
     id_licenca SERIAL PRIMARY KEY,
-    id_industria CHAR(14) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
+    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
     descricao VARCHAR(300) NOT NULL
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE Materia_Prima (
 
 -- Entidade: Fornecedora de Animais
 CREATE TABLE Fornecedora_Animais (
-    id_industria INT PRIMARY KEY REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
+    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
     id_fornecedor SERIAL PRIMARY KEY,
     nome_fornecedor VARCHAR(100) NOT NULL,
     endereco_fornecedor VARCHAR(200),
@@ -80,7 +80,7 @@ CREATE TABLE Fornecedora_Animais (
 -- Tabela auxiliar para 'Animal' da Fornecedora (multivalorado)
 CREATE TABLE Animais (
     id_animal SERIAL PRIMARY KEY,
-    id_fornecedora INT REFERENCES Fornecedora_Animais(id_fornecedora) ON DELETE CASCADE,
+    id_fornecedor INT REFERENCES Fornecedora_Animais(id_fornecedor) ON DELETE CASCADE,
     tipo_animal VARCHAR(100) NOT NULL,
     quantidade_populacao INT NOT NULL
 );
