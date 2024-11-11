@@ -135,6 +135,7 @@ CREATE TABLE Seguranca (
 -- Entidade: Recepcionista (especialização)
 CREATE TABLE Recepcionista (
     id_funcionario INT PRIMARY KEY,
+    area_responsabilidade VARCHAR(255),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
 
@@ -209,7 +210,7 @@ VALUES
 INSERT INTO Fornecedora_Animais (id_industria, nome_fornecedor, endereco_fornecedor, proprietario_fornecedor)
 VALUES 
 (1, 'Fornecedora de Camundongos Ltda', 'Rua Anita Garibaldi, 202 - São Paulo', 'Liza Kruger'),
-(2, 'Fornecedor de Coelhos Ltda.', 'Rua Maria Quitéria, 340 - São Paulo de Janeiro', 'Ana Júlia Lima');
+(2, 'Fornecedor de Coelhos Ltda', 'Rua Maria Quitéria, 340 - São Paulo de Janeiro', 'Ana Júlia Lima');
 
 
 -- Insert Animais
@@ -242,9 +243,9 @@ VALUES
 
 
 -- Insert Recepcionista
-INSERT INTO Recepcionista (id_funcionario)
+INSERT INTO Recepcionista (id_funcionario, area_responsabilidade)
 VALUES 
-(3);
+(3, 'Atende clientes');
 
 -- Insert Cientista/Pesquisador
 INSERT INTO Cientista_Pesquisador (id_funcionario, area_especializacao, diploma, tempo_atuacao)
