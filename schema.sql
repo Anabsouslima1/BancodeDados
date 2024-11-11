@@ -3,7 +3,7 @@ CREATE TABLE Industria_Farmaceutica (
     id_industria SERIAL PRIMARY KEY,
     nome_empresa VARCHAR(100) NOT NULL,
     ano_fundacao INT,
-    faturamento_anual NUMERIC(15, 2),
+    faturamento_anual NUMERIC(15, 2)
 );
 
 -- Tabela auxiliar para 'Licenças e Certificados' (normalização)
@@ -86,7 +86,7 @@ CREATE TABLE Fornecedora_Animais (
 -- Tabela auxiliar para 'Animal' da Fornecedora (multivalorado)
 CREATE TABLE Animais (
     id_animal SERIAL PRIMARY KEY,
-    id_fornecedor INT REFERENCES Fornecedora_Animais(id_fornecedor) ON DELETE CASCADE,
+    id_fornecedora INT REFERENCES Fornecedora_Animais(id_fornecedora) ON DELETE CASCADE,
     tipo_animal VARCHAR(100) NOT NULL,
     quantidade_populacao INT NOT NULL
 );
