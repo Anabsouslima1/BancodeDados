@@ -3,7 +3,7 @@ CREATE TABLE Industria_Farmaceutica (
     id_industria SERIAL PRIMARY KEY,
     nome_empresa VARCHAR(100) NOT NULL,
     ano_fundacao INT,
-    faturamento_anual NUMERIC(15, 2),
+    faturamento_anual NUMERIC(15, 2)
 );
 
 -- Tabela auxiliar para 'Licenças e Certificados' (normalização)
@@ -20,7 +20,7 @@ CREATE TABLE Unidade (
     id_industria INT,
     cnpj_unidade CHAR(18) UNIQUE,
     endereco VARCHAR(200) NOT NULL,
-    tipo_local VARCHAR(6),  -- 'Sede' ou 'Filial'
+    tipo_local VARCHAR(10) CHECK (tipo_local IN ('Sede', 'Filial')),
     FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE Distribuidora (
     nome_empresa VARCHAR(100) NOT NULL,
     contato_telefone VARCHAR(50),
     contato_email VARCHAR(200),
-    tempo_medio_entrega INTERVAL,
+    tempo_medio_entrega INTERVAL, -- 3 dias ou 5 horas
     capacidade_armazenamento INT
 );
 
@@ -45,15 +45,27 @@ CREATE TABLE Farmacia_Ponto_Venda (
     horario_funcionamento VARCHAR(100) 
 );
 
+-- Entidade: Matéria Prima
+CREATE TABLE Materia_Prima (
+    id_materia_prima SERIAL PRIMARY KEY,
+    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
+    biomateriais VARCHAR(200),
+    micro_organismos VARCHAR(200),
+    substancias_minerais VARCHAR(200),
+    extrato_plantas VARCHAR(200)
+);
+
 -- Entidade: Medicamento Testado
 CREATE TABLE Medicamento_Testado (
     id_farmacia INT REFERENCES Farmacia_Ponto_Venda(id_farmacia) ON DELETE CASCADE,
+    id_materia_prima INT REFERENCES Materia_Prima(id_materia_prima) ON DELETE CASCADE,
     id_produto SERIAL PRIMARY KEY,
     composicao_medicamento VARCHAR(300),
     nome_produto VARCHAR(100) NOT NULL,
     numero_lote VARCHAR(50),
     data_validade DATE,
-    data_fabricacao DATE
+    data_fabricacao DATE,
+    CHECK (data_validade > data_fabricacao) -- Restrição
 );
 
 -- Entidade: Cliente
@@ -65,14 +77,6 @@ CREATE TABLE Cliente (
     endereco_cliente VARCHAR(200)
 );
 
--- Entidade: Matéria Prima
-CREATE TABLE Materia_Prima (
-    id_industria INT PRIMARY KEY REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
-    biomateriais VARCHAR(200),
-    micro_organismos VARCHAR(200),
-    substancias_minerais VARCHAR(200),
-    extrato_plantas VARCHAR(200)
-);
 
 -- Entidade: Fornecedora de Animais
 CREATE TABLE Fornecedora_Animais (
@@ -86,7 +90,7 @@ CREATE TABLE Fornecedora_Animais (
 -- Tabela auxiliar para 'Animal' da Fornecedora (multivalorado)
 CREATE TABLE Animais (
     id_animal SERIAL PRIMARY KEY,
-    id_fornecedor INT REFERENCES Fornecedora_Animais(id_fornecedor) ON DELETE CASCADE,
+    id_fornecedora INT REFERENCES Fornecedora_Animais(id_fornecedora) ON DELETE CASCADE,
     tipo_animal VARCHAR(100) NOT NULL,
     quantidade_populacao INT NOT NULL
 );
