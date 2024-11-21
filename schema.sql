@@ -61,7 +61,7 @@ CREATE TABLE Medicamento_Testado (
     id_materia_prima INT REFERENCES Materia_Prima(id_materia_prima) ON DELETE CASCADE,
     id_produto SERIAL PRIMARY KEY,
     nome_produto VARCHAR(100) NOT NULL,
-    descricao VARCHAR(300),
+    descricao VARCHAR(700),
     numero_lote VARCHAR(50),
     data_validade DATE,
     data_fabricacao DATE,
@@ -72,7 +72,7 @@ CREATE TABLE Medicamento_Testado (
 CREATE TABLE Cliente (
     id_produto INT REFERENCES Medicamento_Testado(id_produto) ON DELETE CASCADE, 
     id_cliente SERIAL PRIMARY KEY, 
-    cpf_cliente CHAR(11) NOT NULL UNIQUE,
+    cpf_cliente CHAR(15) NOT NULL UNIQUE,
     nome_cliente VARCHAR(100),
     endereco_cliente VARCHAR(200)
 );
@@ -99,7 +99,7 @@ CREATE TABLE Animais (
 CREATE TABLE Funcionarios (
     id_funcionario SERIAL PRIMARY KEY,
     nome_funcionario VARCHAR(100) NOT NULL,
-    cpf_funcionario CHAR(11) UNIQUE NOT NULL,
+    cpf_funcionario CHAR(15) UNIQUE NOT NULL,
     endereco_funcionario VARCHAR(200),
     contato_telefone VARCHAR(100),
     contato_email VARCHAR (100),
@@ -113,15 +113,17 @@ CREATE TABLE Funcionarios (
 
 -- Entidade: Zelador (especialização)
 CREATE TABLE Zelador (
-    id_funcionario INT PRIMARY KEY,
+    id_zelador SERIAL PRIMARY KEY,
+    id_funcionario INT,
     area_responsabilidade VARCHAR(255),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
 
 -- Entidade: Segurança (especialização)
 CREATE TABLE Seguranca (
-    id_funcionario INT PRIMARY KEY,
-    licenca_seguranca VARCHAR(400),
+    id_seguranca SERIAL PRIMARY KEY,  
+    id_funcionario INT,
+    licenca_seguranca VARCHAR(500),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
 
@@ -136,6 +138,6 @@ CREATE TABLE Cientista_Pesquisador (
     id_funcionario INT PRIMARY KEY,
     area_especializacao VARCHAR(100),
     diploma VARCHAR(100),
-    tempo_atuacao INT,
+    tempo_atuacao INTERVAL,
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
