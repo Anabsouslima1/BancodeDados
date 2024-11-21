@@ -62,7 +62,7 @@ CREATE TABLE Medicamento_Testado (
     id_produto SERIAL PRIMARY KEY,
     nome_produto VARCHAR(100) NOT NULL,
     descricao VARCHAR(700),
-    numero_lote VARCHAR(50),
+    numero_lote VARCHAR(50) UNIQUE,
     data_validade DATE,
     data_fabricacao DATE,
     CHECK (data_validade > data_fabricacao) -- Restrição
