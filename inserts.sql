@@ -69,10 +69,13 @@ INSERT INTO Animais (id_fornecedora, tipo_animal, quantidade_populacao)
 VALUES 
 (1, 'Camundongos', 250),
 (1, 'Ratos', 300),
+(1, 'Hamsters', 150),
 (2, 'Coelhos', 200),
-(2, 'Hamsters', 150),
+(2, 'Macacos', 50),
+(2, 'Porcos', 50),
 (3, 'Cães', 100),
-(3, 'Porcos', 50);
+(3, 'Gatos', 100),
+(3, 'Pássaros', 50);
 
 -- Zelador (Especificação)
 INSERT INTO Zelador (id_funcionario, area_responsabilidade)
@@ -99,7 +102,6 @@ INSERT INTO Seguranca (id_funcionario, licenca_seguranca)
 VALUES 
 (4, 'Certificação de Vigilante: Ana Clara completou com sucesso o Curso de Vigilante, certificado pela Polícia Federal. Este curso proporciona treinamento em vigilância patrimonial, legislação sobre segurança privada e procedimentos de segurança em diversas situações, como controle de acesso, prevenção de furtos e abordagem de indivíduos suspeitos.'),
 (4, 'Autorização para o Uso de Arma de Fogo (Porte de Arma): Ana Clara obteve autorização da Polícia Federal para o porte de arma de fogo, após passar por exames psicológicos rigorosos, cursos de manuseio seguro de armas e avaliação prática.'),
-(6, 'Certificação de Vigilante: Sérgio Rodrigues completou com sucesso o Curso de Vigilante, certificado pela Polícia Federal. Este curso proporciona treinamento em vigilância patrimonial, legislação sobre segurança privada e procedimentos de segurança em diversas situações, como controle de acesso, prevenção de furtos e abordagem de indivíduos suspeitos.'),
 (6, 'NR-23 (Proteção Contra Incêndios): Sérgio Rodrigues recebeu a certificação em Normas Regulamentadoras de Proteção Contra Incêndios (NR-23). Este treinamento abrange todas as práticas necessárias para garantir a segurança contra incêndios, incluindo uso de extintores, evacuação de emergência e instalação de sistemas de combate a incêndios. Juliana agora está equipada para garantir que as instalações cumpram as exigências legais de segurança e que os procedimentos sejam seguidos em caso de incêndio.');
 
 -- Cientista/Pesquisador (Especialização)
