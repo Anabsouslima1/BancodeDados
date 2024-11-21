@@ -8,11 +8,13 @@ VALUES
 -- Funcionários
 INSERT INTO Funcionarios (nome_funcionario, cpf_funcionario, endereco_funcionario, contato_telefone, contato_email, setor, cargo, turno, salario, id_industria)
 VALUES 
-('Júlia Bastos', '516.164.688-82', 'Rua João Goulart, 74', '11 94263-7964', 'juliabastos@gmail.com', 'Manutenção', 'Zeladora', 'Matutino', 3000.00, 3),
-('Ana Beatriz', '677.654.361-50', 'Rua Getúlio Dornelles, 60', '11 985678-7587', 'anabia@gmail.com', 'Pesquisa', 'Pesquisadora', 'Noturno', 5000.00, 2),
-('Livia Severi', '996.789.123-40', 'Rua Francesco Severi, 80', '11 98937-6671', 'liviaseveri@gmail.com', 'Administração', 'Recepcionista', 'Vespertino', 2000.00, 3),
-('Ana Clara', '728.123.456-03', 'Rua Juscelino Kubitschek, 94', '11 95366-5345', 'anaclara@gmail.com', 'Segurança', 'Segurança', 'Noturno', 7000.00, 1),
-('Eliza Kruger', '123.456.789-10', 'Avenida Padre Arlindo Vieira, 256', '11 94455-2627', 'lizakruger10@gmail.com', 'Bioinformática', 'Cientista', 'Matutino', 9000.00, 1);
+('Júlia Bastos', '516.164.688-82', 'Rua João Goulart, 74 - SP', '11 94263-7964', 'juliabastos@gmail.com', 'Manutenção', 'Zeladora', 'Matutino', 3000.00, 3),
+('Ana Beatriz', '677.654.361-50', 'Rua Getúlio Dornelles, 60 - RJ', '11 985678-7587', 'anabia@gmail.com', 'Biotecnologia', 'Pesquisadora', 'Noturno', 6500.00, 2),
+('Livia Severi', '996.789.123-40', 'Rua Francesco Severi, 80 - SP', '11 98937-6671', 'liviaseveri@gmail.com', 'Qualidade e Controle (QA/QC)', 'Cientista', 'Vespertino', 7000.00, 3),
+('Ana Clara', '728.123.456-03', 'Rua Juscelino Kubitschek, 94 - PR', '11 95366-5345', 'anaclara@gmail.com', 'Segurança', 'Segurança', 'Noturno', 6000.00, 1),
+('Eliza Kruger', '123.456.789-10', 'Avenida Padre Arlindo Vieira, 256 - PR', '11 94455-2627', 'lizakruger@gmail.com', 'Bioinformática', 'Cientista', 'Matutino', 9000.00, 1),
+('Sérgio Rodrigues', '185.740.590-05', 'Avenida dos Andradas, 876 - RJ', '11 99761-2308', 'sergiorodrigues@gmail.com', 'Segurança', 'Segurança', 'Noturno', 5500.00, 2),
+('Breno Fausto', '752.219.550-08', 'Avenida Brigadeiro Faria Lima, 1422 - SP', '11 93762-6996', 'brenofausto@gmail.com', 'Administração', 'Recepcionista', 'Vespertino', 2300.00, 3);
 
 -- Matéria-Prima
 INSERT INTO Materia_Prima (id_industria, biomateriais, micro_organismos, substancias_minerais, extrato_plantas)
@@ -51,7 +53,7 @@ VALUES
 (1, '56.745.678/3451-02', 'Avenida Atlântica, 130 - Rio de Janeiro', 'Sede'),
 (1, '98.245.678/9322-50', 'Rua Dom Pedro II, 47 - São Paulo', 'Filial'),
 (2, '12.345.678/0001-90', 'Avenida das Nações Unidas, 150 - São Paulo', 'Sede'),
-(2, '13.709.306/0001-63', 'Avenida Goiás, 789,', 'Filial'),
+(2, '13.709.306/0001-63', 'Avenida Goiás, 789 - Minas Gerais', 'Filial'),
 (3, '56.165.432/0167-19', 'Rua Joaquim Nabuco, 30 - Curitiba', 'Sede'),
 (3, '81.004.896/2125-93', 'Avenida Sete de Setembro, 1220 - Bahia', 'Filial');
 
@@ -81,7 +83,7 @@ VALUES
 -- Recepcionista (Especialização)
 INSERT INTO Recepcionista (id_funcionario)
 VALUES 
-(3);
+(7);
 
 -- Medicamento Testado 
 INSERT INTO Medicamento_Testado (nome_produto, descricao, numero_lote, data_validade, data_fabricacao, id_farmacia, id_materia_prima)
@@ -96,20 +98,22 @@ VALUES
 INSERT INTO Seguranca (id_funcionario, licenca_seguranca)
 VALUES 
 (4, 'Certificação de Vigilante: Ana Clara completou com sucesso o Curso de Vigilante, certificado pela Polícia Federal. Este curso proporciona treinamento em vigilância patrimonial, legislação sobre segurança privada e procedimentos de segurança em diversas situações, como controle de acesso, prevenção de furtos e abordagem de indivíduos suspeitos.'),
-(4, 'Autorização para o Uso de Arma de Fogo (Porte de Arma): Ana Clara obteve autorização da Polícia Federal para o porte de arma de fogo, após passar por exames psicológicos rigorosos, cursos de manuseio seguro de armas e avaliação prática.');
+(4, 'Autorização para o Uso de Arma de Fogo (Porte de Arma): Ana Clara obteve autorização da Polícia Federal para o porte de arma de fogo, após passar por exames psicológicos rigorosos, cursos de manuseio seguro de armas e avaliação prática.'),
+(6, 'NR-23 (Proteção Contra Incêndios): Sérgio Rodrigues recebeu a certificação em Normas Regulamentadoras de Proteção Contra Incêndios (NR-23). Este treinamento abrange todas as práticas necessárias para garantir a segurança contra incêndios, incluindo uso de extintores, evacuação de emergência e instalação de sistemas de combate a incêndios. Juliana agora está equipada para garantir que as instalações cumpram as exigências legais de segurança e que os procedimentos sejam seguidos em caso de incêndio.');
 
 -- Cientista/Pesquisador (Especialização)
 INSERT INTO Cientista_Pesquisador (id_funcionario, area_especializacao, diploma, tempo_atuacao)
 VALUES 
 (2, 'Biotecnologia', 'Doutorado em Biotecnologia com especialização em Microbiologia', '8 years'),
 (2, 'Microbiologia', 'Mestrado em Biotecnologia', '10 years'),
+(3, 'Qualidade e Controle (QA/QC)', 'Mestrado em Engenharia de Produção com especialização em Controle de Qualidade', '6 years'),
 (5, 'Bioinformática', 'Doutorado em Bioinformática com especialização em Genômica', '12 years'),
 (5, 'Genômica', 'Mestrado em Genômica', '15 years');
 
 -- Cliente 
 INSERT INTO Cliente (id_produto, cpf_cliente, nome_cliente, endereco_cliente)
 VALUES
-(1, '378.479.010-05', 'Breno Fausto', 'Avenida Mário Tourinho, 300 - PR'),
+(1, '378.479.010-05', 'Bruno Leite', 'Avenida Mário Tourinho, 300 - PR'),
 (2, '628.233.310-50', 'Gabriel Carvalho', 'Avenida Rio Branco, 1800 - RJ'),
 (3, '510.870.580-82', 'Luna Alves', 'Rua do Sol, 56 - BA'),
 (2, '978.740.010-44', 'Olivia Vieira', 'Rua dos Três Poderes - DF'),
