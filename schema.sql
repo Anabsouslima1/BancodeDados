@@ -39,7 +39,7 @@ CREATE TABLE Distribuidora (
 CREATE TABLE Farmacia_Ponto_Venda (
     id_distribuidora INT REFERENCES Distribuidora(id_distribuidora) ON DELETE CASCADE,
     id_farmacia SERIAL PRIMARY KEY,
-    cnpj_farmacia CHAR(14) UNIQUE, 
+    cnpj_farmacia CHAR(19) UNIQUE, 
     nome VARCHAR(50),          
     endereco VARCHAR(200),      
     horario_funcionamento VARCHAR(100) 
@@ -60,8 +60,8 @@ CREATE TABLE Medicamento_Testado (
     id_farmacia INT REFERENCES Farmacia_Ponto_Venda(id_farmacia) ON DELETE CASCADE,
     id_materia_prima INT REFERENCES Materia_Prima(id_materia_prima) ON DELETE CASCADE,
     id_produto SERIAL PRIMARY KEY,
-    composicao_medicamento VARCHAR(300),
     nome_produto VARCHAR(100) NOT NULL,
+    descricao VARCHAR(300),
     numero_lote VARCHAR(50),
     data_validade DATE,
     data_fabricacao DATE,
@@ -121,7 +121,7 @@ CREATE TABLE Zelador (
 -- Entidade: Segurança (especialização)
 CREATE TABLE Seguranca (
     id_funcionario INT PRIMARY KEY,
-    licenca_seguranca VARCHAR(200),
+    licenca_seguranca VARCHAR(400),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
 
