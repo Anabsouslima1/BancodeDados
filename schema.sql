@@ -77,7 +77,6 @@ CREATE TABLE Cliente (
     endereco_cliente VARCHAR(200)
 );
 
-
 -- Entidade: Fornecedora de Animais
 CREATE TABLE Fornecedora_Animais (
     id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
