@@ -123,7 +123,7 @@ CREATE TABLE Zelador (
 CREATE TABLE Seguranca (
     id_seguranca SERIAL PRIMARY KEY,  
     id_funcionario INT,
-    licenca_seguranca VARCHAR(500),
+    licenca_seguranca VARCHAR(600),
     FOREIGN KEY (id_funcionario) REFERENCES Funcionarios(id_funcionario) ON DELETE CASCADE
 );
 
