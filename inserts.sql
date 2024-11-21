@@ -96,8 +96,10 @@ VALUES
 -- Cientista/Pesquisador (Especialização)
 INSERT INTO Cientista_Pesquisador (id_funcionario, area_especializacao, diploma, tempo_atuacao)
 VALUES 
-(2, 'Biotecnologia, Genômica', 'Doutorado em Biotecnologia e Genômica', '10 years'),
-(5, 'Bioinformática, Genômica', 'Doutorado em Bioinformática com especialização em Genômica', '15 years');
+(2, 'Biotecnologia', 'Doutorado em Biotecnologia com especialização em Microbiologia', '8 years'),
+(2, 'Microbiologia', 'Mestrado em Biotecnologia', '10 years'),
+(5, 'Bioinformática', 'Doutorado em Bioinformática com especialização em Genômica', '12 years'),
+(5, 'Genômica', 'Mestrado em Genômica', '15 years');
 
 -- Cliente 
 INSERT INTO Cliente (id_produto, cpf_cliente, nome_cliente, endereco_cliente)
