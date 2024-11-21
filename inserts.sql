@@ -113,4 +113,7 @@ VALUES
 (2, '628.233.310-50', 'Gabriel Carvalho', 'Avenida Rio Branco, 1800 - RJ'),
 (3, '510.870.580-82', 'Luna Alves', 'Rua do Sol, 56 - BA'),
 (2, '978.740.010-44', 'Olivia Vieira', 'Rua dos Três Poderes - DF'),
-(1, '810.827.400-12', 'Max de Melo', 'Rua das Palmeiras, 25 - SP');
+(1, '810.827.400-12', 'Max de Melo', 'Rua das Palmeiras, 25 - SP'),
+(4, '647.278.510-40', 'Sofia Oliveira', 'Rua das Flores, 115 - MG'),
+(5, '397.106.370-53', 'Pedro Rocha', 'Rua do Comércio, 700 - PE'),
+(4, '662.779.060-20', 'Jõao Matias', 'Rua Vitória, 213 - ES');
