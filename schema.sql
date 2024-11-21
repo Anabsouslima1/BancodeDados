@@ -10,7 +10,7 @@ CREATE TABLE Industria_Farmaceutica (
 CREATE TABLE Licencas_Certificados (
     id_licenca SERIAL PRIMARY KEY,
     id_industria INT,
-    descricao VARCHAR(300) NOT NULL,
+    descricao VARCHAR(500) NOT NULL,
     FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
 );
 
@@ -18,7 +18,7 @@ CREATE TABLE Licencas_Certificados (
 CREATE TABLE Unidade (
     id_unidade SERIAL PRIMARY KEY,
     id_industria INT,
-    cnpj_unidade CHAR(18) UNIQUE,
+    cnpj_unidade CHAR(19) UNIQUE,
     endereco VARCHAR(200) NOT NULL,
     tipo_local VARCHAR(10) CHECK (tipo_local IN ('Sede', 'Filial')),
     FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
@@ -40,7 +40,7 @@ CREATE TABLE Farmacia_Ponto_Venda (
     id_distribuidora INT REFERENCES Distribuidora(id_distribuidora) ON DELETE CASCADE,
     id_farmacia SERIAL PRIMARY KEY,
     cnpj_farmacia CHAR(14) UNIQUE, 
-    sede VARCHAR(150),          
+    nome VARCHAR(50),          
     endereco VARCHAR(200),      
     horario_funcionamento VARCHAR(100) 
 );
