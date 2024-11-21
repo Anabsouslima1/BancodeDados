@@ -135,7 +135,8 @@ CREATE TABLE Recepcionista (
 
 -- Entidade: Cientista/Pesquisador (especialização)
 CREATE TABLE Cientista_Pesquisador (
-    id_funcionario INT PRIMARY KEY,
+    id_cientista SERIAL PRIMARY KEY,
+    id_funcionario INT,
     area_especializacao VARCHAR(100),
     diploma VARCHAR(100),
     tempo_atuacao INTERVAL,
