@@ -51,10 +51,10 @@ VALUES
 INSERT INTO Unidade (id_industria, cnpj_unidade, endereco, tipo_local)
 VALUES 
 (1, '56.745.678/3451-02', 'Avenida Atlântica, 130 - Rio de Janeiro', 'Sede'),
-(1, '98.245.678/9322-50', 'Rua Dom Pedro II, 47 - São Paulo', 'Filial'),
+(1, '98.245.678/9322-50', 'Rua Dom Pedro II, 47 - Curitiba', 'Filial'),
 (2, '12.345.678/0001-90', 'Avenida das Nações Unidas, 150 - São Paulo', 'Sede'),
 (2, '13.709.306/0001-63', 'Avenida Goiás, 789 - Minas Gerais', 'Filial'),
-(3, '56.165.432/0167-19', 'Rua Joaquim Nabuco, 30 - Curitiba', 'Sede'),
+(3, '56.165.432/0167-19', 'Rua Joaquim Nabuco, 30 - Espírito Santo', 'Sede'),
 (3, '81.004.896/2125-93', 'Avenida Sete de Setembro, 1220 - Bahia', 'Filial');
 
 -- Farmácia / Pontos de Venda
