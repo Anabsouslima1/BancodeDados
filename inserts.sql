@@ -19,14 +19,16 @@ INSERT INTO Materia_Prima (id_industria, biomateriais, micro_organismos, substan
 VALUES
 (3, 'Colágeno', 'Lactobacillus acidophilus', 'Óxido de magnésio', 'Ginseng'),
 (2, 'Fibra de carbono', 'Escherichia coli (E. coli)', 'Sulfato de Ferro', 'Camomila'),
-(1, 'Quitosana', 'Streptomyces', 'Carbonato de Cálcio', 'Hortelã-pimenta');
+(1, 'Quitosana', 'Streptomyces', 'Carbonato de Cálcio', 'Hortelã-pimenta'),
+(3, 'Pectina', 'Bacillus subtilis', 'Ácido Fólico', 'Própolis'),
+(1, 'Gelatina', 'Penicillium chrysogenum', 'Sulfato de magnésio', 'Cúrcuma');
 
 -- Fornecedora de Animais
 INSERT INTO Fornecedora_Animais (id_industria, nome_fornecedora, endereco_fornecedora, proprietario_fornecedora)
 VALUES 
 (2, 'BioAnimais Ltda.', 'Rua Anita Garibaldi, 202 - São Paulo', 'Rodrigo Castanho'),
 (1, 'VetBio Supplies', 'Rua Maria Quitéria, 340 - Rio de Janeiro', 'Júlio de Souza'),
-(3, 'Laboratório Fauna & Research', 'Rua das Palmeiras, 88 - Santa Catarina', 'André Marques');
+(3, 'Laboratório Fauna & Research', 'Avenida das Acácias, 88 - Santa Catarina', 'André Marques');
 
 -- Distribuidora 
 INSERT INTO Distribuidora (nome_empresa, contato_telefone, contato_email, tempo_medio_entrega, capacidade_armazenamento, id_industria)
@@ -49,6 +51,7 @@ VALUES
 (1, '56.745.678/3451-02', 'Avenida Atlântica, 130 - Rio de Janeiro', 'Sede'),
 (1, '98.245.678/9322-50', 'Rua Dom Pedro II, 47 - São Paulo', 'Filial'),
 (2, '12.345.678/0001-90', 'Avenida das Nações Unidas, 150 - São Paulo', 'Sede'),
+(2, '13.709.306/0001-63', 'Avenida Goiás, 789,', 'Filial'),
 (3, '56.165.432/0167-19', 'Rua Joaquim Nabuco, 30 - Curitiba', 'Sede'),
 (3, '81.004.896/2125-93', 'Avenida Sete de Setembro, 1220 - Bahia', 'Filial');
 
@@ -85,7 +88,9 @@ INSERT INTO Medicamento_Testado (nome_produto, descricao, numero_lote, data_vali
 VALUES 
 ('FlexiVital', 'Suplemento alimentar indicado para melhorar a saúde das articulações, promover a saúde intestinal, aumentar a energia e melhorar a saúde geral da pele. Seu efeito sinérgico combina o poder do colágeno para articulações saudáveis, probióticos para digestão equilibrada, magnésio para uma musculatura forte, e ginseng para mais energia e resistência ao estresse diário. Ideal para quem busca uma abordagem natural para manter a saúde física e mental.', '19945', '2025-12-31', '2020-01-10', 2, 1),
 ('Bemzilax', 'Suplemento nutricional indicado para auxiliar no equilíbrio intestinal, melhorar a absorção de ferro e promover o bem-estar digestivo. Sua fórmula combina fibra de carbono para promover a saúde intestinal, Escherichia coli (em uma cepa benéfica) para reequilibrar a flora intestinal e combater a disbiose, sulfato de ferro para prevenir a anemia e camomila para aliviar o desconforto gástrico. Ideal para quem busca melhorar a digestão, fortalecer o sistema imunológico e manter níveis saudáveis de ferro no organismo.', '67890', '2024-06-30', '2018-02-15', 1, 2),
-('DigestCare', 'Antibiótico para tratamento de infecções gastrointestinais e alívio de distúrbios digestivos como azia, refluxo e gastrite. A combinação de Streptomyces ajuda no combate de infecções bacterianas no trato gastrointestinal, enquanto o Carbonato de Cálcio e a Hortelã-pimenta promovem alívio para sintomas de azia, refluxo e cólicas. A Quitosana auxilia na redução do inchaço e proteção da mucosa gástrica, proporcionando alívio imediato e promovendo a recuperação digestiva.', '84465', '2026-03-31', '2023-12-10', 3, 3);
+('DigestCare', 'Antibiótico para tratamento de infecções gastrointestinais e alívio de distúrbios digestivos como azia, refluxo e gastrite. A combinação de Streptomyces ajuda no combate de infecções bacterianas no trato gastrointestinal, enquanto o Carbonato de Cálcio e a Hortelã-pimenta promovem alívio para sintomas de azia, refluxo e cólicas. A Quitosana auxilia na redução do inchaço e proteção da mucosa gástrica, proporcionando alívio imediato e promovendo a recuperação digestiva.', '84465', '2026-03-31', '2023-12-10', 3, 3),
+('ArthroRelief', 'Anti-inflamatório e regenerador para o alívio de dores articulares e inflamações musculares. A pectina contribui para a recuperação das articulações, ajudando na mobilidade, enquanto o Bacillus subtilis tem efeito imunomodulador, promovendo a defesa contra inflamações crônicas. Indicado para condições como artrite, tendinite e lesões musculares.', '57683', '2026-11-30', '2024-05-10', 3, 4),  
+('ImunoCure', 'Antibiótico e anti-inflamatório para o tratamento de infecções bacterianas e alívio de inflamações. O sulfato de magnésio atua na regulação do sistema nervoso e muscular, e a cúrcuma fornece potentes propriedades anti-inflamatórias, sendo eficaz no tratamento de inflamações crônicas e lesões musculares. Ideal para o combate a infecções e fortalecimento do sistema imunológico.', '89234', '2025-09-30', '2023-11-22', 2, 5);
 
 -- Segurança (Especialização)
 INSERT INTO Seguranca (id_funcionario, licenca_seguranca)
