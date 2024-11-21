@@ -106,7 +106,9 @@ CREATE TABLE Funcionarios (
     setor VARCHAR(100),
     cargo VARCHAR(100),
     turno VARCHAR(30),
-    salario NUMERIC(10,2)
+    salario NUMERIC(10,2),
+    id_industria INT,
+    FOREIGN KEY (id_industria) REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE
 );
 
 -- Entidade: Zelador (especialização)
