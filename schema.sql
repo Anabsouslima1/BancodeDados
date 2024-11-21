@@ -3,7 +3,7 @@ CREATE TABLE Industria_Farmaceutica (
     id_industria SERIAL PRIMARY KEY,
     nome_empresa VARCHAR(100) NOT NULL,
     ano_fundacao INT,
-    faturamento_anual NUMERIC(15, 2)
+    faturamento_anual_reais NUMERIC(15, 2)
 );
 
 -- Tabela auxiliar para 'Licenças e Certificados' (normalização)
