@@ -32,7 +32,7 @@ CREATE TABLE Distribuidora (
     contato_telefone VARCHAR(50),
     contato_email VARCHAR(200),
     tempo_medio_entrega INTERVAL, -- 3 dias ou 5 horas
-    capacidade_armazenamento INT
+    capacidade_armazenamento INT -- Em unidades
 );
 
 -- Entidade: Farmacia/Ponto de Venda
