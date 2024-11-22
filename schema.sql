@@ -59,6 +59,7 @@ CREATE TABLE Materia_Prima (
 CREATE TABLE Medicamento_Testado (
     id_farmacia INT REFERENCES Farmacia_Ponto_Venda(id_farmacia) ON DELETE CASCADE,
     id_materia_prima INT REFERENCES Materia_Prima(id_materia_prima) ON DELETE CASCADE,
+    id_industria INT REFERENCES Industria_Farmaceutica(id_industria) ON DELETE CASCADE,
     id_produto SERIAL PRIMARY KEY,
     nome_produto VARCHAR(100) NOT NULL,
     descricao VARCHAR(700),
