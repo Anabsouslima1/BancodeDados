@@ -29,7 +29,7 @@ JOIN industria_farmaceutica I ON I.id_industria = F.id_industria
 JOIN Medicamento_Testado M ON M.id_industria = I.id_industria
 WHERE M.nome_produto = 'FlexiVital';
 
--- 5. Indique a média de salários dos funcionários da empresa com id_industria = 3, com 2 casas decimais
+-- 5. Indicar a média de salários dos funcionários da empresa com id_industria = 3, com 2 casas decimais
 
 SELECT ROUND(AVG(f.salario), 2) AS media_salarios
 FROM funcionarios f
@@ -64,7 +64,7 @@ JOIN Farmacia_ponto_venda f on d.id_distribuidora = f.id_distribuidora
 WHERE i.id_industria IN (1,2)
 ORDER BY f.nome;
 
--- 9. Exiba o nome do produto, número do lote, data de fabricação, data de validade, e a farmácia responsável pela distribuição de todos os medicamentos testados. Calcule também a duração dos medicamentos e a quantidade de dias restantes para o vencimento de cada medicamento e classifique-os em 'Válido' ou 'Vencido'. A lista deve ser ordenada pelo status de validade e pelo número de dias restantes até o vencimento, de forma decrescente."
+-- 9. Exiba o nome do produto, número do lote, data de fabricação, data de validade, e a farmácia responsável pela distribuição de todos os medicamentos testados. Calcule também a duração dos medicamentos e a quantidade de dias restantes para o vencimento de cada medicamento e classifique-os em 'Válido' ou 'Vencido'. A lista deve ser ordenada pelo status de validade e pelo número de dias restantes até o vencimento, de forma decrescente.
 
 
 SELECT m.nome_produto, m.numero_lote, m.data_fabricacao, m.data_validade, f.nome AS Farmacia, (m.data_validade - m.data_fabricacao) AS  Duracao_Medicamento, (m.data_validade - CURRENT_DATE) AS Dias_Para_Vencer,
